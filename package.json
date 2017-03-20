@@ -1,0 +1,23 @@
+{
+  "name": "steal-svelte",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "steal": "^1.3.1",
+    "steal-tools": "^1.2.0",
+    "svelte": "^1.12.1",
+    "systemjs-plugin-text": "0.0.9"
+  },
+  "steal": {
+    "ext": {
+      "html": "systemjs-plugin-text"
+    },
+    "plugins": ["systemjs-plugin-text"]
+  }
+}
