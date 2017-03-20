@@ -17,8 +17,8 @@
   },
   "steal": {
     "ext": {
-      "html": "systemjs-plugin-text"
+      "html": "svelte-systemjs-plugin"
     },
-    "plugins": ["systemjs-plugin-text"]
+    "plugins": ["svelte-systemjs-plugin"]
   }
 }
