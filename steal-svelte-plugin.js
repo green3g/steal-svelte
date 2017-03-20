@@ -3,14 +3,13 @@ import { compile } from 'svelte';
 
 export function translate(load) {
     load.metadata = {
-      format: 'amd'
+        format: 'es6'
     };
-    const result = compile(load.source, {
+    let result = compile(load.source, {
         format: 'amd',
         amd: {
             id: load.name
         }
     });
-    console.log(result.code);
     return result.code;
 }

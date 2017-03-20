@@ -35,27 +35,35 @@ all co-ords are relative to the center -->
 		width: 100%;
 		height: 100%;
 	}
+
 	.clock-face {
 		stroke: #333;
 		fill: white;
 	}
+
 	.minor {
 		stroke: #999;
 		stroke-width: 0.5;
 	}
+
 	.major {
 		stroke: #333;
 		stroke-width: 1;
 	}
+
 	.hour {
 		stroke: #333;
 	}
+
 	.minute {
 		stroke: #666;
 	}
-	.second, .second-counterweight {
-		stroke: rgb(180,0,0);
+
+	.second,
+	.second-counterweight {
+		stroke: rgb(180, 0, 0);
 	}
+
 	.second-counterweight {
 		stroke-width: 3;
 	}
@@ -63,29 +71,39 @@ all co-ords are relative to the center -->
 
 <script>
 	export default {
-		data () {
+		data: function data() {
 			return {
 				// clock face markers - major (every 5 minutes) and minor (every minute)
-				major: new Array( 12 ),
-				minor: new Array( 60 ),
+				major: new Array(12),
+				minor: new Array(60),
 				time: new Date()
 			};
 		},
 
+
 		computed: {
-			hours: time => time.getHours(),
-			minutes: time => time.getMinutes(),
-			seconds: time => time.getSeconds()
+			hours: function hours(time) {
+				return time.getHours();
+			},
+			minutes: function minutes(time) {
+				return time.getMinutes();
+			},
+			seconds: function seconds(time) {
+				return time.getSeconds();
+			}
 		},
 
-		oncreate () {
-			this.interval = setInterval( () => {
-				this.set({ time: new Date() });
-			}, 1000 );
-		},
+		oncreate: function oncreate() {
+			var _this = this;
 
-		ondestroy () {
-			clearInterval( this.interval );
+			this.interval = setInterval(function() {
+				_this.set({
+					time: new Date()
+				});
+			}, 1000);
+		},
+		ondestroy: function ondestroy() {
+			clearInterval(this.interval);
 		}
-	};
+	}
 </script>

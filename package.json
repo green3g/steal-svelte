@@ -18,6 +18,8 @@
     "ext": {
       "html": "steal-svelte-plugin"
     },
-    "plugins": ["steal-svelte-plugin"]
+    "plugins": [
+      "steal-svelte-plugin"
+    ]
   }
 }
