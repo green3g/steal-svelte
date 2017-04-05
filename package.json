@@ -20,6 +20,15 @@
     },
     "plugins": [
       "steal-svelte-plugin"
+    ],
+    "bundle": [
+      "steal-svelte/pages/circle.html",
+      "steal-svelte/pages/clock.html",
+      "steal-svelte/pages/crud.html",
+      "steal-svelte/pages/home.html"
     ]
+  },
+  "devDependencies": {
+    "buble": "^0.15.2"
   }
 }

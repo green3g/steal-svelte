@@ -1,12 +1,13 @@
-
 import { compile } from 'svelte';
+import { transform } from 'buble';
 
 export function translate(load) {
-    let result = compile(load.source, {
+    const compiled = compile(load.source, {
         format: 'amd',
         amd: {
             id: load.name
         }
     });
-    return result.code;
+    const transformed = transform(compiled.code);
+    return transformed.code;
 }
