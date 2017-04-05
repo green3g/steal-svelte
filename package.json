@@ -12,7 +12,7 @@
   "dependencies": {
     "steal": "^1.3.1",
     "steal-tools": "^1.2.0",
-    "svelte": "^1.12.1"
+    "svelte": "1.12"
   },
   "steal": {
     "ext": {
@@ -21,7 +21,6 @@
     "plugins": [
       "steal-svelte-plugin"
     ],
-    "bundleSteal": true,
     "bundle": [
       "steal-svelte/pages/circle.html",
       "steal-svelte/pages/clock.html",

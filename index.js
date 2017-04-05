@@ -1,5 +1,4 @@
 import Nav from './components/nav.html';
-
 const DEFAULT_PAGE = 'home';
 let current = null;
 
