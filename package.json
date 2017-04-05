@@ -27,8 +27,5 @@
       "steal-svelte/pages/crud.html",
       "steal-svelte/pages/home.html"
     ]
-  },
-  "devDependencies": {
-    "buble": "^0.15.2"
   }
 }

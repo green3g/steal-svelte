@@ -18,7 +18,8 @@ function loadPage(page) {
         current = null;
     }
     steal.import(`steal-svelte/pages/${page}.html`).then(function(Component) {
-        current = new Component({
+        console.log(Component)
+        current = new Component.default({
             target: document.body,
             data: {}
         });
