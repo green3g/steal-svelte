@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "steal-tools",
+    "build": "node build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -21,6 +21,7 @@
     "plugins": [
       "steal-svelte-plugin"
     ],
+    "bundleSteal": true,
     "bundle": [
       "steal-svelte/pages/circle.html",
       "steal-svelte/pages/clock.html",
