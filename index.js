@@ -17,9 +17,8 @@ function loadPage(page) {
         current.destroy();
         current = null;
     }
-    steal.import(`steal-svelte/pages/${page}.html`).then(function(Component) {
-        console.log(Component)
-        current = new Component.default({
+    steal.import(`steal-svelte/pages/${page}.html`).then(function(module) {
+        current = new module.default({
             target: document.body,
             data: {}
         });
@@ -42,6 +41,9 @@ const nav = new Nav({
         }, {
             title: 'Data Entry',
             id: 'crud'
+        }, {
+          title: 'Draw some circles',
+          id: 'circle'
         }]
     }
 })
