@@ -1,2 +1,59 @@
 <h1>Home</h1>
 <p>This page demonstrates a basic example of progressively loaded svelte app.</p>
+<h3>search for some data!</h3>
+
+<input bind:value="viewModel.search" />
+
+<table>
+    {{#each viewModel.data as row, index}}
+        <tr on:click="select(row, viewModel)"><td>{{row.code}}</td><td>{{row.name}}</td></tr>
+    {{/each}}
+</table>
+
+
+<script>
+    import states from './states.json';
+
+    // use a define map because its cool!
+    import DefineMap from 'can-define/map/map';
+
+    const ViewModel = DefineMap.extend({
+        search: {value: ''},
+        data: {
+            get(){
+                const data = [];
+                for(var code in states){
+                    const search = this.search.toUpperCase();
+                    const state = states[code].toUpperCase();
+                    if(!this.search || state.indexOf(search) > -1 || code.indexOf(search) > -1){
+                        data.push({code: code, name:  states[code]})
+                    }
+                }
+
+                return data;
+            }
+        },
+        toggle(row){
+            row.assign({selected: !row.selected});
+        },
+        selected: {
+            get(){
+            return this.data[0].name;
+        }
+    }
+    });
+
+
+	export default {
+		data () {
+			return {
+                viewModel: new ViewModel
+			};
+        },
+        methods: {
+            select(row, viewModel){
+                viewModel.search = row.name;
+            }
+        }
+    }
+</script>
