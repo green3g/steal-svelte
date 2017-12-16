@@ -2,9 +2,12 @@
 <p>This page demonstrates a basic example of progressively loaded svelte app.</p>
 <h3>search for some data!</h3>
 
-<input bind:value="viewModel.search" />
+<div class="input-group input-inline">
+        <input bind:value="viewModel.search" class="form-input" type="text" placeholder="search" data-cip-id="cIPJQ342845639">
+        <button class="btn btn-primary input-group-btn">Search</button>
+     </div>
 
-<table>
+<table class="table">
     {{#each viewModel.data as row, index}}
         <tr on:click="select(row, viewModel)"><td>{{row.code}}</td><td>{{row.name}}</td></tr>
     {{/each}}

@@ -1,11 +1,21 @@
-{{#each pages as page}}
-<li><a href="#{{page.id}}">{{page.title}}</a></li>
-{{/each}}
+
+    <div class="navbar">
+    <div class="navbar-section">
+            {{#each pages as page}}
+                <a class="btn btn-link" href="#{{page.id}}">{{page.title}}</a>
+            {{/each}}
+    </div>
+    <div class="navbar-section">
+    </div>
+    </div>
 
 <script>
+    import 'spectre.css/dist/spectre.min.css';
     export default {
         data() {
-            return {};
+            return {
+                searchResult: ''
+            };
         }
     }
 </script>
